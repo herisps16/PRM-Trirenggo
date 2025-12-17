@@ -153,17 +153,16 @@
   </div>
 
   <!-- Area Tanda Tangan -->
-  <div style="padding:30px 40px 20px;">
+   <div style="padding:30px 40px 20px;">
     <div style="display:flex; justify-content:space-between; text-align:center; margin-top:40px;">
       <div style="width:45%;">
         <p>Ketua</p>
-        <img src="" alt="Tanda Tangan Ketua" style="max-width:140px; height:auto; margin:10px auto;">
-        <div style="height:20px;"></div>
+        <img src="" style="max-width:220px;">
         <p style="font-weight:600;">( Rifai )</p>
       </div>
       <div style="width:45%;">
         <p>Sekretaris</p>
-        <img src="/ttddancap.png" style="max-width:140px; height:auto; margin:10px auto;">
+        <img src="ttddancap.png" style="max-width:220px;">        
         <p style="font-weight:600;">( Nur Kholis )</p>
       </div>
     </div>
@@ -184,22 +183,6 @@
 
   if (nama) {
     document.getElementById('namaUndangan').innerText = 'Yth. ' + decodeURIComponent(nama);
-  }
-  // Ambil parameter tanda tangan dari URL
-  // Contoh: undangan.html?nama=Heris&ttd_ketua=ttd-ketua.png&ttd_sekretaris=ttd-sekretaris.png
-  const ttdKetua = params.get('ttd_ketua');
-  const ttdSekretaris = params.get('ttd_sekretaris');
-
-  if (ttdKetua) {
-    const imgKetua = document.getElementById('ttdKetua');
-    imgKetua.src = ttdKetua;
-    imgKetua.style.display = 'block';
-  }
-
-  if (ttdSekretaris) {
-    const imgSekre = document.getElementById('ttdSekretaris');
-    imgSekre.src = ttdSekretaris;
-    imgSekre.style.display = 'block';
   }
 </script>
 
