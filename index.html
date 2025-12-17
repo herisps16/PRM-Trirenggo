@@ -8,9 +8,8 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      /* Background motif geometris */
       background-color: #eaf5ee;
-      /* Background motif logo Muhammadiyah (matahari) warna lembut */
+      /* motif logo Muhammadiyah (matahari) lembut */
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='rgba(15,124,58,0.12)' stroke-width='2'%3E%3Ccircle cx='60' cy='60' r='18'/%3E%3Cline x1='60' y1='4' x2='60' y2='20'/%3E%3Cline x1='60' y1='100' x2='60' y2='116'/%3E%3Cline x1='4' y1='60' x2='20' y2='60'/%3E%3Cline x1='100' y1='60' x2='116' y2='60'/%3E%3Cline x1='18' y1='18' x2='30' y2='30'/%3E%3Cline x1='90' y1='90' x2='102' y2='102'/%3E%3Cline x1='18' y1='102' x2='30' y2='90'/%3E%3Cline x1='90' y1='30' x2='102' y2='18'/%3E%3C/g%3E%3C/svg%3E"),
         linear-gradient(135deg, #eaf5ee, #f6fbf8);
@@ -20,57 +19,43 @@
     }
     .container {
       max-width: 650px;
-      margin: 40px auto;
-      /* Background undangan + motif */
+      margin: 30px auto;
       background-color: rgba(255,255,255,0.97);
+      /* motif halus di dalam undangan */
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='rgba(15,124,58,0.08)' stroke-width='2'%3E%3Ccircle cx='80' cy='80' r='22'/%3E%3Cline x1='80' y1='6' x2='80' y2='22'/%3E%3Cline x1='80' y1='138' x2='80' y2='154'/%3E%3Cline x1='6' y1='80' x2='22' y2='80'/%3E%3Cline x1='138' y1='80' x2='154' y2='80'/%3E%3Cline x1='22' y1='22' x2='36' y2='36'/%3E%3Cline x1='124' y1='124' x2='138' y2='138'/%3E%3Cline x1='22' y1='138' x2='36' y2='124'/%3E%3Cline x1='124' y1='36' x2='138' y2='22'/%3E%3C/g%3E%3C/svg%3E");
       background-size: 180px 180px;
-      backdrop-filter: blur(6px);
-      border-radius: 22px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       overflow: hidden;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.3);
-      animation: fadeIn 1s ease-in-out;
     }
     .header {
-      position: relative;
       background: linear-gradient(135deg, #0f7c3a, #1faa59);
       color: #fff;
-      padding: 45px 25px;
+      padding: 35px 20px;
       text-align: center;
-      overflow: hidden;
-    }
-    .header::after {
-      content: "";
-      position: absolute;
-      bottom: -40px;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 70%);
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 26px;
-      font-weight: 700;
-    }
-    .header p {
-      margin: 8px 0 0;
-      font-size: 15px;
-      opacity: 0.9;
     }
     .body {
       padding: 30px;
-      color: #333;
       font-size: 15px;
-      line-height: 1.9;
+      line-height: 1.8;
+      color: #333;
+    }
+    .badge {
+      display: inline-block;
+      background: #0f7c3a;
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 18px;
     }
     .nama {
       font-size: 22px;
       font-weight: 600;
       color: #0f7c3a;
       text-align: center;
-      margin: 15px 0 25px;
+      margin: 10px 0 25px;
     }
     .detail {
       background: #f5f8ff;
@@ -81,15 +66,18 @@
     }
     .detail p {
       margin: 8px 0;
+      display: grid;
+      grid-template-columns: 150px 10px auto;
+      column-gap: 6px;
     }
-    .badge {
-      display: inline-block;
-      background: #0f7c3a;
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-bottom: 15px;
+    .detail p strong {
+      white-space: nowrap;
+    }
+    @media (max-width: 480px) {
+      .detail p {
+        grid-template-columns: 120px 8px auto;
+        font-size: 14px;
+      }
     }
     .footer {
       text-align: center;
@@ -97,13 +85,6 @@
       background: #fafafa;
       font-size: 14px;
       color: #555;
-    }
-    .footer strong {
-      color: #0f7c3a;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
