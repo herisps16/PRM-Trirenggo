@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Undangan Sarasehan</title>
+  <title>Undangan Sarasehan Digital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -111,10 +111,15 @@
 
 <div class="container">
   <div class="header">
-    <!-- Logo Muhammadiyah (opsional, bisa diganti file SVG/PNG resmi) -->
-    <h3>PIMPINAN RANTING MUHAMMADIYAH TRIRENGGO</h3>
-    <div style="margin-bottom:12px; font-size:14px; opacity:0.95;">Sekretariat : Masjid Ad-Da’wah Pepe Tegal Trirenggo Bantul 55714</div>
-    <div style="margin-bottom:12px; font-size:14px; opacity:0.95;">Hp. 0851 0186 2700</div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap;">
+      <!-- Logo Muhammadiyah -->
+      <img src="logo-muhammadiyah.png" alt="Logo Muhammadiyah" style="width:70px; height:auto;">
+      <div>
+        <h3 style="margin:0;">PIMPINAN RANTING MUHAMMADIYAH TRIRENGGO</h3>
+        <div style="margin-top:6px; font-size:14px; opacity:0.95;">Sekretariat : Masjid Ad-Da’wah Pepe Tegal Trirenggo Bantul 55714</div>
+        <div style="font-size:14px; opacity:0.95;">Hp. 0851 0186 2700</div>
+      </div>
+    </div>
   </div>
 
   <div class="body">
@@ -127,14 +132,14 @@
     <p>Dengan hormat, kami mengundang Bapak/Ibu untuk menghadiri kegiatan <strong>Sarasehan Digital</strong> sebagai forum diskusi dan berbagi wawasan mengenai pemanfaatan teknologi digital dalam mendukung peningkatan kinerja dan kolaborasi.</p>
 
     <div class="detail">
-      <p><strong>📅 Hari / Tanggal:</strong> Rabu, 24 Desember 2025</p>
+      <p><strong>📅 Hari / Tanggal:</strong> Sabtu, 20 Januari 2026</p>
       <p><strong>⏰ Waktu:</strong> 09.00 – 12.00 WIB</p>
-      <p><strong>📍 Tempat:</strong> SMK MUHAMMADIYAH 1 BANTUL</p>
-      <p><strong>🎯 Acara:</strong> Sarasehan PRM PRA</p>
+      <p><strong>📍 Tempat:</strong> Aula Utama / Zoom Meeting</p>
+      <p><strong>🎯 Tema:</strong> Strategi Digital di Era Modern</p>
     </div>
 
     <div style="text-align:center; margin:30px 0;">
-      <a href="https://wa.me/6283840012423?text=Konfirmasi%20kehadiran%20Sarasehan%20Digital" 
+      <a href="https://wa.me/628xxxxxxxxxx?text=Konfirmasi%20kehadiran%20Sarasehan%20Digital" 
          style="display:inline-block; background:#0f7c3a; color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600;">
         ✅ Konfirmasi Kehadiran
       </a>
@@ -145,6 +150,24 @@
     <p>Atas perhatian dan kehadirannya, kami ucapkan terima kasih.</p>
 
     <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+  </div>
+
+  <!-- Area Tanda Tangan -->
+  <div style="padding:30px 40px 20px;">
+    <div style="display:flex; justify-content:space-between; text-align:center; margin-top:40px;">
+      <div style="width:45%;">
+        <p>Ketua</p>
+        <img id="ttdKetua" src="" alt="Tanda Tangan Ketua" style="max-width:140px; height:auto; margin:10px auto; display:none;">
+        <div style="height:20px;"></div>
+        <p style="font-weight:600;">( Rifai )</p>
+      </div>
+      <div style="width:45%;">
+        <p>Sekretaris</p>
+        <img id="ttdSekretaris" src="" alt="Tanda Tangan Sekretaris" style="max-width:140px; height:auto; margin:10px auto; display:none;">
+        <div style="height:20px;"></div>
+        <p style="font-weight:600;">( Nur Kholis )</p>
+      </div>
+    </div>
   </div>
 
   <div class="footer">
@@ -162,6 +185,22 @@
 
   if (nama) {
     document.getElementById('namaUndangan').innerText = 'Yth. ' + decodeURIComponent(nama);
+  }
+  // Ambil parameter tanda tangan dari URL
+  // Contoh: undangan.html?nama=Heris&ttd_ketua=ttd-ketua.png&ttd_sekretaris=ttd-sekretaris.png
+  const ttdKetua = params.get('ttd_ketua');
+  const ttdSekretaris = params.get('ttd_sekretaris');
+
+  if (ttdKetua) {
+    const imgKetua = document.getElementById('ttdKetua');
+    imgKetua.src = ttdKetua;
+    imgKetua.style.display = 'block';
+  }
+
+  if (ttdSekretaris) {
+    const imgSekre = document.getElementById('ttdSekretaris');
+    imgSekre.src = ttdSekretaris;
+    imgSekre.style.display = 'block';
   }
 </script>
 
